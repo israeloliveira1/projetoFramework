@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://jsonplaceholder.typicode.com/posts" uri="xml-resources/web-service-references/posts/wsdl/jsonplaceholder.typicode.com/posts"/>
+    <system systemId="https://jsonplaceholder.typicode.com/albums" uri="xml-resources/web-service-references/albums/wsdl/jsonplaceholder.typicode.com/albums"/>
+    <system systemId="https://jsonplaceholder.typicode.com/todos" uri="xml-resources/web-service-references/todos/wsdl/jsonplaceholder.typicode.com/todos"/>
+</catalog>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-posts" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/posts"/>
+        <property name="wsdl-posts" location="xml-resources/web-service-references/posts/wsdl/jsonplaceholder.typicode.com/posts"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/posts" destdir="${build.generated.dir}/jax-wsCache/posts" wsdl="${wsdl-posts}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="https://jsonplaceholder.typicode.com/posts" xnocompile="true" xendorsed="true" package="Formulario">
+            <depends file="${wsdl-posts}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/posts"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/posts">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-posts" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/posts"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/Formulario"/>
+    </target>
+    <target name="wsimport-client-albums" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/albums"/>
+        <property name="wsdl-albums" location="xml-resources/web-service-references/albums/wsdl/jsonplaceholder.typicode.com/albums"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/albums" destdir="${build.generated.dir}/jax-wsCache/albums" wsdl="${wsdl-albums}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="https://jsonplaceholder.typicode.com/albums" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-albums}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/albums"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/albums">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-albums" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/albums"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/"/>
+    </target>
+    <target name="wsimport-client-todos" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/todos"/>
+        <property name="wsdl-todos" location="xml-resources/web-service-references/todos/wsdl/jsonplaceholder.typicode.com/todos"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/todos" destdir="${build.generated.dir}/jax-wsCache/todos" wsdl="${wsdl-todos}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="https://jsonplaceholder.typicode.com/todos" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-todos}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/todos"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/todos">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-todos" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/todos"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-posts, wsimport-client-albums, wsimport-client-todos"/>
+</project>
